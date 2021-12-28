@@ -11,7 +11,7 @@ interface ISettings {
 
 // You can customize below settings :)
 const settings: ISettings = {
-  title: 'IEPF Admin',
+  title: 'Lucky Fox Admin',
   showSettings: true,
   showTagsView: true,
   fixedHeader: false,

@@ -5,16 +5,12 @@ export const defaultAdminData: IAdminData = {
   id: 0,
   enabled: true,
   fullName: '',
-  email: '',
+  email:'',
   contactNumber: '',
   password: '',
-  gender: '' ,
+  gender:'',
   avatar: '',
   adminsRoleId: 1,
-  adminsRole: {
-    id: null,
-    name: ''
-  }
 }
 export const getAdmins = (params: any) =>
   request({

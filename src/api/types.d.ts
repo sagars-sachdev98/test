@@ -2,94 +2,139 @@ export interface IAdminsRoleData {
   id: number
   enabled: boolean
   name: string
-  adminsRole: any;
 }
 
+export interface ICategoryData{
+  
+}
 
-export interface IFileData {
-  id: number
-  enabled: boolean
-  symbol:string
-  year:string
-  fileURL:string
+export interface IForwardData{
+  id: number | null;
+  enabled: boolean | null;
+  date: string | null;
+  accountId: string | null;
+  supplierId: string | null;
+  cdays: number | null;
+  cdate: string | null;
+  customerId:string | null;
+  millId: string | null;
+  count: number | null;
+  pkg: number | null;
+  type: string | null;
+  rate: number | null;
+  qty: number | null;
+  amount: number | null;
 }
-export interface IEnquiryData {
-  id: number
-  status: string
-  ip: string
-  name:string
-  state:string
-  contactNumber:string
+
+export interface ICareerData{
+  id: number;
+  postTitle:string;
+ location: string;
 }
-export interface IDetailShareData{
+export interface IClaimData{
+id:number | null;
+enabled:boolean;
+userId:number | null;
+bankId:number | null;
+amount:number | null;
+status:number | null;
+
+}
+
+export interface IGameData{
   id:number
   enabled:boolean
-  fullName:	string
-  email:string
-  contactNumber:string
-  enquiredIds:string
-  occupation:string
-  address:string
-  amountToPay:string
-}
+  userId:number | null
+  winnerId:number
+  prizeAmount:number
+  numberOfParticipants:number
+  noOfParticipantsPaid:number | null
+  totalAmountCollected:number | null
+  gameCode:string
+  claimed:boolean
+  status:number | null
+  perPersonAmount:number 
+  winnerCount:number | null
+  // winner_1:number | null
+  // winner_2:number | null
+  // winner_3:number | null
+  // winner_1_id:number | null
+  // winner_2_id:number | null
+  // winner_3_id:number | null
+  isRealMoney: boolean
+  
+  }
 
-export interface IShareData {
-  id: number
-  enabled: boolean
-  year:	string
-  fileId:	number
-  investorFirstName:	string
-  investorMiddleName:	string
-  investorLastName:	string
-  fatherHusbandFirstName:	string
-  fatherHusbandMiddleName:	string
-  fatherHusbandLastName:	string
-  address:	string
-  city:	string
-  pincode:	string
-  folioNumber:	string
-  clientAccountNumber: string
-  numberOfShares:	number
-  nominalValueOfShares:	number
-  actualDateOfTransferToIEPF:	string
-}
-export interface IBlogData{
-  id:number;
-  title:string;
-  content:string;
-  blogWriter:string;
-  enabled:boolean;
-  featured:boolean;
-}
-
-
-export interface ICompanyData {
-  id: number
-  enabled: boolean
-  symbol:string
-  year:string
-  fileURL:string
-  type:string
-  shareValue:number
-  companyName:string
-}
+export interface IBankData{
+id:number | null;
+userId:number | null;
+bankAccountNumber:string;
+ifscCode:number | null;
+bankName:string | null;
+branchName:string | null;
+bankCustomerName:string | null;
+createdTimestamp?:	string | null
+createdBy?:	number | null
+    }
   
 
-export interface IExpertAdviceData {
-  id: number
-  enabled: boolean
-  fullName:string
-  email:string
-  contactNumber:string
-  occupation:string
-  address:string
+export interface IPurchaseSalesData{
+  id: number;
+  enabled: boolean;
+  dono: string;
+  invoiceNo: string;
+  enteryDate: string;
+  date: string;
+  accountId: string;
+  supplierId: string;
+  cdays: number;
+  cdate: string;
+  customerId: '';
+  millId: string;
+  count: number;
+  pkg: number;
+  type: string;
+  rate: number;
+  qty: number;
+  amount: number;
+  payments: IPayments[];
+  balance:number;
+}
+export interface IPayments{
+id:number;
+date:string;
+amount:string;
 }
 
+export interface IGameTransactionData{
+  id:number;
+  userId:	number
+  gameId:	number
+  prizeId:	number
+  status:	string
+  }
 
+export interface IMillData {
+  id: number
+  enabled: boolean
+  name: string
+  code: string
+  percentage: number;
+}
 
+export interface IOwnerData {
+  id: number
+  enabled: boolean
+  name: string,
+  contact: string
+}
 
-
-
+export interface IAccountBookData {
+  id: number
+  enabled: boolean
+  name: string
+  code: string
+}
 
 export interface IAdminData {
   id: number
@@ -100,11 +145,7 @@ export interface IAdminData {
   password: string | null
   avatar: string
   gender: string
-  adminsRoleId: number,
-  adminsRole: {
-    id: number | null,
-    name: string
-  }
+  adminsRoleId: number
 }
 
 export interface ICountryData {
@@ -116,27 +157,6 @@ export interface ICountryData {
   zipCodeMaxLength: number
 }
 
-export interface ILoginData {
-  id: number
-  enabled: boolean
-  username: string
-  ip: string
-  location: string
-}
-
-export interface IPermanentBlockData {
-  id: number
-  ip: string
-  message: string
-}
-
-export interface ITemporaryBlockData {
-  id: number
-  ip: string
-  lastHitDateTime: string
-  isBlocked:boolean
-  count:number
-}
 export interface IStateData {
   id: number
   enabled: boolean
@@ -172,9 +192,26 @@ export interface IUserData {
   enabled: boolean
   fullName: string
   email: string
-  contactNumber: string,
-  occupation:string,
-  address:string,
+  contactNumber: string
+  password: string
+  realMoney:number
+  fakeMoney:number
+  numberOfGamesWon:number
+  numberOfPrizesWon:number
+  pushId: string;
+  device: string;
+  deviceId: string;
+  platform: string;
+  OSVersion: string;
+  uuid: string;
+  model: string;
+  manufacturer: string;
+  appVersion: string;
+  createdBy: number;
+  createdTimestamp?: string;
+  updatedBy?: number;
+  updatedTimestamp?: string;
+  pushUpdatedTimestamp?: string;
 }
 
 export interface IAmenityData {
@@ -204,6 +241,11 @@ export interface IBusinessData {
 //   name: string
 // }
 
+export interface ICompanyData {
+  id: number
+  enabled: boolean
+  name: string
+}
 
 export interface ISiteData {
   id: number
@@ -376,7 +418,25 @@ export interface ILocationsAmenityData {
   amenities: any | undefined
 }
 
-
+export interface IBooksData {
+  id: number;
+  isPaid: boolean;
+  title: string;
+  totalRating: number;
+  description: string;
+  author: string;
+  samplePdf: string;
+  fullPdf: string;
+  isbn: string;
+  coverPhoto: string;
+  createdBy: number;
+  createdTimestamp: string;
+  updatedBy: number;
+  updatedTimestamp: string;
+  enabled: boolean;
+  titles: ITitlesData[];
+  order: number;
+}
 export interface ITitlesData {
   id: number;
   bookId: string;
@@ -419,4 +479,155 @@ export interface IUsersData {
   pushUpdatedTimestamp: string,
 }
 
+export interface IPaymentsData {
+  id: number;
+  txtId: string;
+  bookId: string;
+  userId: string;
+  planId: string;
+  createdBy: number;
+  createdTimestamp: string;
+  updatedBy: number;
+  updatedTimestamp: string;
+  user: IUserData;
+  plan: IPlansData;
+}
 
+export interface IPlansData {
+  id: number | null;
+  duration: number | null;
+  enabled: boolean;
+  amount: number;
+  price:number | null;
+  name: string;
+  planName:string;
+  createdBy: number | null;
+  createdTimestamp: string;
+  updatedBy: number | null;
+  updatedTimestamp: string;
+  noOfUsersPurchased?:number | null;
+
+}
+
+export interface ISuppliersData {
+  id: number;
+  enabled: boolean;
+  ownersId: any;
+  formName: string;
+  commission: number;
+  openingBalance: number;
+  closingBalance: number;
+  contactNumber: string;
+  telephone: string;
+  faxNo: string;
+  email: string;
+  GST: string;
+  createdBy: number;
+  createdTimestamp: string;
+  updatedBy: number;
+  updatedTimestamp: string;
+}
+
+export interface ICustomersData {
+  id: number;
+  enabled: boolean;
+  ownersId: any;
+  formName: string;
+  openingBalance: number;
+  closingBalance: number;
+  limit: number;
+  contactNumber: string;
+  officeAddress: string;
+  godownAddress: string;
+  godownNumber: string;
+
+  telephone: string;
+  faxNo: string;
+  email: string;
+  GST: string;
+  createdBy: number;
+  createdTimestamp: string;
+  updatedBy: number;
+  updatedTimestamp: string;
+}
+
+export interface IPrizeData{
+  id:number
+  enabled:	boolean | null
+  title:	string
+  description:	string
+  prize:number | null
+  secondPrize:number | null
+  perPersonAmount: number | null
+  numberOfParticipants:number | null
+  numberOfParticipantsLT:number | null
+  numberOfParticipantsPaid:number
+  dateTimeOfStart:string
+  expiry:string
+  totalAmountCollected:number
+  image:	string
+  participantId:	number 
+  winnerId:	number | null
+  feature:	boolean
+  claimed: boolean
+}
+export interface IGameParticipantData{
+  id:number
+  enabled:boolean
+  userId:number
+  inviteeId:number
+  gameId:number
+  status:number
+}
+export interface IPrizeParticipantData{
+  id:number
+  enabled:boolean
+  userId:number
+  prizeId:number
+  scratched:boolean
+  
+  
+}
+
+export interface IPlanData{
+  id: number
+enabled:boolean | null
+coins:number | null
+prize:number | null
+planExpiry:string | null
+planName:string | null,
+noOfUsersPurchased:number
+createdTimestamp?:string | null
+createdBy?:	number | null
+updatedBy?:	number | null
+updatedTimestamp?:	string | null
+}
+
+export interface IPlanTransactionData{
+id:number 
+enabled:boolean | null
+userId: number
+planId:number
+referenceId:number
+}
+
+export interface IStoreData{
+  id: number;
+  enabled: boolean;
+  mallIds: number;
+  clickCount: number;
+  createdBy: number;
+  coverImage: string;
+  showroomImages: string;
+  contactEmailId: string;
+  address: string;
+  videoLink: string;
+  description: string;
+  brandName: string;
+  logo: string;
+  priority: number;
+  name: string;
+  GSTNumber: string;
+  PANNumber: string;
+  onlineURL: string;
+}

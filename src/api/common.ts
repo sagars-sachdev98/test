@@ -9,20 +9,11 @@ export const toggleEnable = (url: string, data: any) =>
 
 export const uploadFile = (data: any, onUploadProgressCallBack: any) =>
   request({
-    url: '/companies/upload',
+    url: '/common/upload',
     method: 'post',
     data,
     onUploadProgress: onUploadProgressCallBack
   })
-
-  export const uploadShares = (data: any, onUploadProgressCallBack: any) =>
-  request({
-    url: '/files/upload',
-    method: 'post',
-    data,
-    onUploadProgress: onUploadProgressCallBack
-  })
-
 
 export const getAppVersions = () =>
   request({

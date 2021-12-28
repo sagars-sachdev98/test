@@ -30,7 +30,7 @@
       >
         <div class="avatar-wrapper">
           <img
-            :src="avatar+'?imageView2/1/w/80/h/80'"
+            src="foxface.png"
             class="user-avatar"
           >
           <i class="el-icon-caret-bottom" />
@@ -121,14 +121,11 @@ export default class extends Vue {
     cursor: pointer;
     transition: background 0.3s;
     -webkit-tap-highlight-color: transparent;
-    color: #388fe0;
+    color: #407B4C;
     &:hover {
       background: rgba(0, 0, 0, 0.025);
     }
   }
-  .el-submenu__title i {
-    color: white;
-}
 
   .breadcrumb-container {
     float: left;

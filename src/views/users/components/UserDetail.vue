@@ -59,30 +59,70 @@
 
         <el-form-item
           style="margin-bottom: 20px;"
-          label="Occupation"
-          prop="occupation"
+          label="Gender"
+          prop="gender"
         >
-          <el-input
-            v-model="postForm.occupation"
-            name="occupation"
-            required
-            placeholder="Occupation"
-          />
+          <el-select
+            v-model="postForm.gender"
+            name="Gender"
+            placeholder="Select"
+          >
+            <el-option
+              v-for="item in selectOptions"
+              :key="item.value"
+              :label="item.name"
+              :value="item.value"
+            />
+          </el-select>
         </el-form-item>
+
         <el-form-item
           style="margin-bottom: 20px;"
-          label="Address"
-          prop="address"
+          label="Password"
+          prop="password"
         >
           <el-input
-            v-model="postForm.address"
-            type="textarea"
-            :rows="3"
-            name="address"
+            v-model="postForm.password"
+            name="email"
             required
-            placeholder="Address"
+            placeholder="Password"
           />
         </el-form-item>
+
+        <el-form-item
+          style="margin-bottom: 20px;"
+          label="Role"
+        >
+          <el-select
+            v-model="postForm.usersRoleId"
+            name="usersRoleId"
+            placeholder="Select"
+          >
+            <el-option
+              v-for="role in roleList"
+              :key="role.id"
+              :label="role.name"
+              :value="role.id"
+            />
+          </el-select>
+        </el-form-item>
+
+        <!-- <el-form-item style="margin-bottom: 20px;" label="Plan">
+          <el-select  v-model="planName" placeholder="Select"
+          @change="updatePlan($event)"
+          >
+            <el-option
+              v-for="plan in planList"
+              :key="plan.id"
+              :label="plan.name"
+              :value="plan"
+            />
+          </el-select>
+        </el-form-item> -->
+
+        <!-- <el-form-item style="margin-bottom: 20px;" label="Newsletter" prop="isMonthlyNewsletter">
+          <el-switch v-model="postForm.isMonthlyNewsletter" />
+        </el-form-item> -->
 
         <el-form-item>
           <el-button
@@ -122,10 +162,10 @@ import router from './../../../router'
 import { Action } from 'vuex-module-decorators'
 import { getUsersRoles } from '@/api/usersRoles'
 import { getQuery } from '../../../utils'
-// import { getCompanies } from '@/api/master/companies'
-// import { getCountries } from '@/api/locations/countries'
-// import { getCities } from '@/api/locations/cities'
-// import { getStates } from '@/api/locations/states'
+import { getCompanies } from '@/api/master/companies'
+import { getCountries } from '@/api/locations/countries'
+import { getCities } from '@/api/locations/cities'
+import { getStates } from '@/api/locations/states'
 
 @Component({
   name: 'UserDetail',
@@ -289,7 +329,7 @@ export default class extends Vue {
    }
 
    // updatePlan(index: any, event: any) {
-   //
+   //   debugger
    //   // this.postForm.planExipiryDate = new Date(
    //   //   new Date().getFullYear(),
    //   //   new Date().getMonth() + this.planList[event - 1].duration,
@@ -298,13 +338,13 @@ export default class extends Vue {
    // }
 
    private updatePlanId(post: any) {
-     //    ;
+     //   debugger;
      //   this.postForm.planId = post.id;
      //   this.postForm.duration = post.duration;
      //   this.planName = post.name;
      // }
      //   private submitForm() {
-     //      ;
+     //     debugger;
      //     (this.$refs.postForm as Form).validate(valid => {
      //       if (valid) {
      //         this.saveForm();
@@ -316,6 +356,7 @@ export default class extends Vue {
    }
 
    private submitForm() {
+     debugger;
      (this.$refs.postForm as Form).validate(valid => {
        if (valid) {
          this.saveForm()

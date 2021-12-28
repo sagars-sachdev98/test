@@ -8,7 +8,7 @@ const usersRouter: RouteConfig = {
   name: 'userManagement.title',
   meta: {
     title: 'userManagement.title',
-    icon: 'user-square'
+    icon: 'users-alt'
   },
   children: [
     {
@@ -18,7 +18,7 @@ const usersRouter: RouteConfig = {
       meta: {
         title: 'userManagement.title',
         noCache: true,
-        icon: 'user-square'
+        icon: 'users-alt'
       }
     },
     {

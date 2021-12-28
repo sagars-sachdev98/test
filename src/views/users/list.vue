@@ -6,13 +6,7 @@
         :placeholder="$t('user.fullName')"
         style="width: 200px;"
         class="filter-item"
-        @input="handleFilter"
-      />
-      <el-input
-        v-model="listQuery.email"
-        :placeholder="$t('user.email')"
-        style="width: 200px;"
-        class="filter-item"
+        clearable = true
         @input="handleFilter"
       />
       <el-input
@@ -20,21 +14,21 @@
         :placeholder="$t('user.contactNumber')"
         style="width: 200px;"
         class="filter-item"
+        clearable = true
         @input="handleFilter"
       />
-
-       <el-select
-        v-model="listQuery.enabled"
-        :placeholder="$t('admin.role.enabled')"
-        clearable
+      <el-select
+        v-model="listQuery.isVerified"
+        style="width: 140px"
         class="filter-item"
-        style="width: 130px"
+        placeholder="Verified"
+        clearable = true
         @change="handleFilter"
       >
         <el-option
-          v-for="item in enableTypeOptions"
+          v-for="item in verifyOptions"
           :key="item.key"
-          :label="item.value"
+          :label="item.label"
           :value="item.key"
         />
       </el-select>
@@ -52,10 +46,9 @@
         />
       </el-select>
 
-       <el-button
+      <el-button
         v-waves
-        filterable="true"
-        clearable="true"
+        class="filter-item"
         type="primary"
         icon="el-icon-search"
         @click="handleFilter"
@@ -75,51 +68,96 @@
       @sort-change="sortChange"
     >
       <el-table-column
-        width="50"
+        width="80px"
         align="center"
         label="ID"
         prop="id"
       />
       <el-table-column
-        width="270px"
+        width="200px"
         align="center"
-        label="Full Name"
+        label="Personal Details"
         prop="fullName"
       >
         <template slot-scope="scope">
           <enabled
+            :key="scope.row.id"
             v-model="scope.row.enabled"
-            :url="'/agent/' + scope.row.id"
-            v-if="myRole.indexOf('superadmin') > -1"
+            :url="'/users/' + scope.row.id"
           />
-          <span>{{ scope.row.fullName }}</span>
+          <span>{{ scope.row.fullName }}</span><br>
+          <!-- <span><b>Gender</b>{{ scope.row.gender }}</span><br> -->
+          <b>Is Verified: </b>
+          <span
+            v-if="scope.row.isVerified === true "
+            style="color:green"
+          >
+            Yes
+          </span>
+          <span
+            v-if="scope.row.isVerified === false "
+            style="color:red"
+          >
+            No
+          </span>
+
           <!-- <span>{{ scope.row.usersRole.name }}</span> -->
         </template>
       </el-table-column>
 
       <el-table-column
-        width="270px"
+        width="200px"
         align="center"
-        label="Contact Details"
+        label="Contact"
         prop="email"
       >
         <template slot-scope="scope">
-          <span>{{ scope.row.email }}</span><br>
+          <!-- <span>{{ scope.row.email }}</span><br> -->
           <span>{{ scope.row.contactNumber }}</span>
         </template>
       </el-table-column>
+
       <el-table-column
-        width="270px"
+        width="200px"
         align="center"
-        label="Occupation"
-        prop="occupation"
-      />
+        label="Money Details"
+        prop="email"
+      >
+        <template slot-scope="scope">
+          <span>Real Money:{{ scope.row.realMoney }}</span><br>
+          <span>fake Money:{{ scope.row.fakeMoney }}</span>
+        </template>
+      </el-table-column>
+
       <el-table-column
-        width="270px"
+        width="200px"
         align="center"
-        label="Address"
-        prop="address"
-      />
+        label="Game Details"
+        prop="email"
+      >
+        <template slot-scope="scope">
+          <span>Game Won:{{ scope.row.numberOfGamesWon }}</span><br>
+          <span>Prize Won:{{ scope.row.numberOfPrizesWon }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column
+        width="200px"
+        align="center"
+        label="Plan Details"
+        prop="email"
+      >
+        <template slot-scope="scope">
+          <router-link :to="'/plantransaction/list/'+scope.row.id">
+            <el-button
+              v-waves
+              type="primary"
+              size="small"
+            >
+              Plan Details
+            </el-button>
+          </router-link>
+        </template>
+      </el-table-column>
     </el-table>
 
     <pagination
@@ -139,7 +177,7 @@ import { IUserData } from '@/api/types'
 import Pagination from '@/components/Pagination/index.vue'
 import { getQuery, formatJson } from '@/utils/index'
 import { exportJson2Excel } from '@/utils/excel'
-import { AdminModule } from '@/store/modules/admin'
+
 import Enabled from '@/components/Enabled/index.vue'
 
 @Component({
@@ -154,23 +192,30 @@ export default class extends Vue {
   private total = 0;
   private list: IUserData[] = [];
   private listLoading = true;
-  private myRole = AdminModule.roles;
   private downloadLoading = false;
   private listQuery = {
     page: 1,
     limit: 10,
-    sort: 'id,ASC',
+    fullName: undefined,
+    email: undefined,
+    contactNumber: undefined,
+    sort: 'id,DESC',
     filter: {
+      isVerified: 'eq',
       fullName: '$contL',
-      contactNumber: '$contL',
-      email: '$contL',
-      enabled:'eq'
+      contactNumber: 'cont',
+      email: 'cont'
     }
   };
 
   private sortOptions = [
     { label: 'ID Ascending', key: 'id,ASC' },
     { label: 'ID Descending', key: 'id,DESC' }
+  ];
+
+  private verifyOptions = [
+    { label: 'Yes', key: 'true' },
+    { label: 'No', key: 'false' }
   ];
 
   private enableTypeOptions = [

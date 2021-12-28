@@ -79,17 +79,6 @@
             required
             placeholder="Contact Number"
           />
-          <el-tooltip
-            class="item"
-            effect="dark"
-            content="Top Left prompts info"
-            placement="top-start"
-          >
-            <span
-              class="el-icon-question"
-              style="font-size:20px;margin-left:5px"
-            />
-          </el-tooltip>
         </el-form-item>
 
         <el-form-item
@@ -177,8 +166,8 @@ export default class extends Vue {
   private loading = false;
 
   private genderList = [
-    { label: 'Male', value: 1 },
-    { label: 'Female', value: 2 }
+    { label: 'Male', value: 'Male' },
+    { label: 'Female', value: 'Female' }
   ];
 
   private rules = {
@@ -203,26 +192,25 @@ export default class extends Vue {
     contactNumber: [
       {
         required: true,
-        message: 'Contact Number is required',
-        trigger: 'blur'
-      },
-      {
-        min: 10,
-        max: 15,
-        message: 'Length should be 10 to 15',
+        pattern: '[123456789][0-9]{9}',
+        max: 10,
+        message: 'Number should be of 10 Digits',
         trigger: ['blur', 'change']
-      },
+      }
+
+    ],
+    gender: [
       {
-        trigger: ['blur', 'change'],
-        pattern: '[0-9]+',
-        message: 'Invalid input'
+        required: true,
+        message: 'Gender is required',
+        trigger: ['blur', 'change']
       }
     ],
     email: [
       {
         required: true,
         message: 'E-Mail is required',
-        trigger: 'blur'
+        trigger: ['blur', 'change']
       },
       {
         type: 'email',
@@ -234,7 +222,7 @@ export default class extends Vue {
       {
         required: true,
         message: 'Password is required',
-        trigger: 'blur'
+        trigger: ['blur', 'change']
       },
       {
         min: 8,
@@ -327,12 +315,10 @@ export default class extends Vue {
     try {
       this.loading = true
       if (this.isEdit) {
-        this.postForm.adminsRole.id = this.postForm.adminsRoleId
         await updateAdmin(this.postForm.id, this.postForm)
       } else {
-          delete this.postForm.adminsRole
-          await register(this.postForm)
-          debugger
+        // delete this.postForm.adminsRole
+        await register(this.postForm)
       }
 
       this.$notify({

@@ -7,8 +7,6 @@ declare module 'element-ui/lib/locale/lang/*' {
   export const elementLocale: any
 }
 
-declare module 'vue-html-to-paper'
-
 declare module '*.gif' {
   export const gif: any
 }

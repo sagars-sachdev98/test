@@ -1,11 +1,19 @@
 <template>
   <div class="login-container">
+    <img
+      src="@/assets/img/login.png"
+      class="login-logo"
+      style="width: 100%; position: fixed"
+    />
     <div class="boxed">
       <el-row :gutter="24">
-        <el-col :sm="10">
-          <img src="@/assets/img/logo-final.png" class="login-logo" />
+        <el-col :sm="13">
+          <img
+            src="@/assets/img/logo.png"
+            class="login-logo" style="margin-left: 75px"
+          >
         </el-col>
-        <el-col :sm="12">
+        <el-col :sm="11">
           <el-form
             ref="loginForm"
             :model="loginForm"
@@ -16,7 +24,7 @@
           >
             <div class="title-container">
               <h3 class="title">
-                {{ $t("login.title") }}
+                {{ $t('login.title') }}
               </h3>
             </div>
 
@@ -47,20 +55,21 @@
                 autocomplete="on"
                 @keyup.enter.native="handleLogin"
               />
-              <span class="show-pwd" @click="showPwd">
-                <svg-icon
-                  :name="passwordType === 'password' ? 'eye-off' : 'eye-on'"
-                />
+              <span
+                class="show-pwd"
+                @click="showPwd"
+              >
+                <svg-icon :name="passwordType === 'password' ? 'eye-off' : 'eye-on'" />
               </span>
             </el-form-item>
 
             <el-button
               :loading="loading"
               type="primary"
-              style="width: 100%; margin-bottom: 30px"
+              style="width:100%; margin-bottom:30px;"
               @click.native.prevent="handleLogin"
             >
-              {{ $t("login.logIn") }}
+              {{ $t('login.logIn') }}
             </el-button>
           </el-form>
         </el-col>
@@ -76,124 +85,112 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from "vue-property-decorator";
-import { AdminModule } from "@/store/modules/admin";
-import { isValidEmail } from "@/utils/validate";
-import LangSelect from "@/components/LangSelect/index.vue";
-import { Dictionary, Route } from "vue-router/types/router";
-import { Input } from "element-ui";
-import { ElForm } from "element-ui/types/form";
-import { addLoginLog, defaultLoginLogData } from "@/api/loginlogs";
-import { ILoginData } from "@/api/types";
+import { Component, Vue, Watch } from 'vue-property-decorator'
+import { AdminModule } from '@/store/modules/admin'
+import { isValidEmail } from '@/utils/validate'
+import LangSelect from '@/components/LangSelect/index.vue'
+import { Dictionary, Route } from 'vue-router/types/router'
+import { Input } from 'element-ui'
+import { ElForm } from 'element-ui/types/form'
 
 @Component({
-  name: "Login",
+  name: 'Login',
   components: {
-    LangSelect,
-  },
+    LangSelect
+  }
 })
 export default class extends Vue {
   private validateUsername = (rule: any, value: string, callback: Function) => {
     if (!isValidEmail(value)) {
-      callback(new Error("Please enter valid email"));
+      callback(new Error('Please enter valid email'))
     } else {
-      callback();
+      callback()
     }
   };
 
   private validatePassword = (rule: any, value: string, callback: Function) => {
     if (value.length < 6) {
-      callback(new Error("The password can not be less than 6 digits"));
+      callback(new Error('The password can not be less than 6 digits'))
     } else {
-      callback();
+      callback()
     }
   };
 
   private loginForm = {
-    email: "",
-    password: "",
+    email: '',
+    password: ''
   };
 
   private loginRules = {
-    email: [{ validator: this.validateUsername, trigger: "blur" }],
-    password: [{ validator: this.validatePassword, trigger: "blur" }],
+    email: [{ validator: this.validateUsername, trigger: 'blur' }],
+    password: [{ validator: this.validatePassword, trigger: 'blur' }]
   };
 
-  private passwordType = "password";
+  private passwordType = 'password';
   private loading = false;
   private showDialog = false;
   private redirect?: string;
   private otherQuery: Dictionary<string> = {};
-  private postForm = Object.assign({}, defaultLoginLogData);
 
-  @Watch("$route", { immediate: true })
+  @Watch('$route', { immediate: true })
   private onRouteChange(route: Route) {
     // TODO: remove the "as Dictionary<string>" hack after v4 release for vue-router
     // See https://github.com/vuejs/vue-router/pull/2050 for details
-    const query = route.query as Dictionary<string>;
+    const query = route.query as Dictionary<string>
     if (query) {
-      this.redirect = query.redirect;
-      this.otherQuery = this.getOtherQuery(query);
+      this.redirect = query.redirect
+      this.otherQuery = this.getOtherQuery(query)
     }
   }
 
   mounted() {
-    if (this.loginForm.email === "") {
-      (this.$refs.email as Input).focus();
-    } else if (this.loginForm.password === "") {
-      (this.$refs.password as Input).focus();
+    if (this.loginForm.email === '') {
+      (this.$refs.email as Input).focus()
+    } else if (this.loginForm.password === '') {
+      (this.$refs.password as Input).focus()
     }
   }
 
   private showPwd() {
-    if (this.passwordType === "password") {
-      this.passwordType = "";
+    if (this.passwordType === 'password') {
+      this.passwordType = ''
     } else {
-      this.passwordType = "password";
+      this.passwordType = 'password'
     }
     this.$nextTick(() => {
-      (this.$refs.password as Input).focus();
-    });
-  }
-
-  private async insertIp(postForm: any) {
-    debugger;
-    await addLoginLog(this.postForm);
-    debugger;
+      (this.$refs.password as Input).focus()
+    })
   }
 
   private handleLogin() {
-    (this.$refs.loginForm as ElForm).validate(async (valid: boolean) => {
+    (this.$refs.loginForm as ElForm).validate(async(valid: boolean) => {
       if (valid) {
-        this.loading = true;
+        this.loading = true
         try {
-
-          
-          await AdminModule.Login(this.loginForm);
-
-          this.postForm.username = this.loginForm.email;
-          this.insertIp(this.postForm);
-          debugger;
+          await AdminModule.Login(this.loginForm)
           this.$router.push({
-            path: this.redirect || "/",
-            query: this.otherQuery,
-          });
+            path: this.redirect || '/',
+            query: this.otherQuery
+          })
         } catch (error) {
-          this.loading = false;
+          this.loading = false
         }
       } else {
-        return false;
+        return false
       }
-    });
+    })
   }
 
   private getOtherQuery(query: Dictionary<string>) {
-    return Object.keys(query).reduce((acc, cur) => {
-      if (cur !== "redirect") {
-        acc[cur] = query[cur];
-      }
-      return acc;
-    }, {} as Dictionary<string>);
+    return Object.keys(query).reduce(
+      (acc, cur) => {
+        if (cur !== 'redirect') {
+          acc[cur] = query[cur]
+        }
+        return acc
+      },
+      {} as Dictionary<string>
+    )
   }
 }
 </script>
@@ -209,23 +206,20 @@ export default class extends Vue {
     }
   }
 }
-.login-container .el-input input {
-  color: black !important;
-  caret-color: black !important;
-}
+
 .login-container {
   height: 100%;
   width: 100%;
   overflow: hidden;
   background-color: white;
-  // background-image: linear-gradient(316deg, #f94327 0%, #ff7d14 74%);
+// background-image: linear-gradient(316deg, #f94327 0%, #ff7d14 74%);
   // background: linear-gradient(180deg, #FFFFFF 0%, #E03C18 95.9%);
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.1);
   .boxed {
     width: 80%;
     margin: 10em auto;
-    margin-bottom: 0px;
+    margin-bottom:0px;
     .login-logo {
       display: flex;
       align-items: center;
@@ -306,7 +300,7 @@ export default class extends Vue {
     }
     .title {
       font-size: 15px;
-      color: #388fe0;
+      color: #407B4C;
       margin: 0px auto 20px auto;
       text-align: center;
       font-weight: bold;
@@ -337,7 +331,7 @@ export default class extends Vue {
     right: 0;
     bottom: 6px;
   }
-  .leaves {
+  .leaves{
     margin-top: -26%;
     width: 100%;
   }
@@ -348,4 +342,5 @@ export default class extends Vue {
     }
   }
 }
+
 </style>

@@ -22,25 +22,9 @@ import * as filters from '@/filters'
 import moment from 'vue-moment'
 import LoadScript from 'vue-plugin-load-script'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
+
+
 import * as icons from './icons'
-import VueHtmlToPaper from 'vue-html-to-paper'
-
-const options = {
-  name: '_blank',
-  specs: [
-    'fullscreen=yes',
-    'titlebar=yes',
-    'scrollbars=yes'
-  ],
-  styles: [
-    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
-    'https://unpkg.com/kidlat-css/css/kidlat.css'
-  ]
-}
-
-Vue.use(VueHtmlToPaper, options);
-// Vue.use(VueHtmlToPaper)
-
 
 Vue.use(ElementUI, {
   size: AppModule.size, // Set element-ui default size

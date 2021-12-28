@@ -4,8 +4,7 @@ import { IAdminsRoleData } from './types'
 export const defaultAdminsRoleData: IAdminsRoleData = {
   id: 0,
   enabled: true,
-  name: '',
-  adminsRole: 0
+  name: ''
 }
 export const getAdminsRoles = (params: any) =>
   request({

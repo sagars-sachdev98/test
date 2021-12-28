@@ -1,5 +1,5 @@
 {
-  "name": "IEPF-admin",
+  "name": "Lucky-Fox-admin",
   "version": "1.0.0",
   "private": true,
   "author": "Mubasshir Pawle <mubasshir@eiosys.com>",
@@ -62,7 +62,6 @@
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
     "vue-count-to": "^1.0.13",
-    "vue-html-to-paper": "^1.3.1",
     "vue-i18n": "^8.15.0",
     "vue-image-crop-upload": "^2.5.0",
     "vue-moment": "^4.0.0",

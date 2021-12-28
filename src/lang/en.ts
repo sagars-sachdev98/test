@@ -81,10 +81,10 @@ export default {
         title: 'Brand',
         manage: 'Manage Brand'
       },
-      // company: {
-      //   title: 'Company',
-      //   manage: 'Manage Company'
-      // },
+      company: {
+        title: 'Company',
+        manage: 'Manage Company'
+      },
       site: {
         title: 'Site',
         manage: 'Manage Site'
@@ -121,74 +121,20 @@ export default {
         manage: 'Manage Prize'
       }
     },
-
-    loginlogManagement: {
-      title: 'Login Management',
-      login: {
-        title: 'Login logs',
-        manage: 'Manage Logins'
+    prizeparticipantManagement: {
+      title: 'Prize Participant Management',
+      prize: {
+        title: 'Prize Participant',
+        manage: 'Manage Prize Participant'
       }
     },
-    PermanentBlockManagement: {
-      title: 'Permanent Block Management',
-      permanentblock: {
-        title: 'Permanently Blocked',
-        manage: 'Manage Permanent Blocks'
+    gameManagement: {
+      title: 'Game Participant Management',
+      game: {
+        title: 'Game Participant',
+        manage: 'Manage Game Participant'
       }
     },
-
-    expertadviceManagement: {
-      title: 'Expert Advice Management',
-      expertadvice: {
-        title: 'Expert Advice',
-        manage: 'Manage Expert Advice'
-      }
-    },
-    detailShareManagement: {
-      title: 'Detail Share',
-      detailShare: {
-        title: 'Detail Share',
-        manage: 'Manage Detail Share'
-      }
-    },
-    TemporaryBlockManagement: {
-      title: 'Temporary Block Management',
-      TemporaryBlock: {
-        title: 'Temporarily Blocked',
-        manage: 'Manage Temporary Blocks'
-      }
-    },
-
-    companyManagement: {
-      title: 'Bhavcopy Management',
-      company: {
-        title: 'Bhavcopy',
-        manage: 'Manage Bhavcopy'
-      }
-    },
-
-    fileManagement: {
-      title: 'File Management',
-      file: {
-        title: 'File',
-        manage: 'Manage File'
-      }
-    },
-    blogManagement: {
-      title: 'Blog Management',
-      blog: {
-        title: 'Blog',
-        manage: 'Manage Blog'
-      }
-    },
-    enquiryManagement: {
-      title: 'Enquiry Management',
-      enquiry: {
-        title: 'Enquiry',
-        manage: 'Manage Enquiry'
-      }
-    },
-
     careerManagement: {
       title: 'Career Management',
       career: {
@@ -213,19 +159,34 @@ export default {
       }
     },
     
-    recordsManagement: {
-      title: 'Records Management',
-      records: {
-        title: 'records',
-        manage: 'Manage Records'
+    planManagement: {
+      title: 'Plan Management',
+      plan: {
+        title: 'Plan',
+        manage: 'Manage Plan'
       }
     },
 
+    gamesManagement: {
+      title: 'Game Management',
+      games: {
+        title: 'Game',
+        manage: 'Manage Game'
+      }
+    },
 
-    transactionManagement: {
-      title: 'Transcation Management',
-      transaction: {
-        title: 'Transaction',
+    gametransactionManagement: {
+      title: 'Game Transaction Management',
+      gametransaction: {
+        title: 'Game Transaction',
+        manage: 'Manage Game Transaction'
+      }
+    },
+
+    plantransactionManagement: {
+      title: ' Plan Transcation Management',
+      plantransaction: {
+        title: 'Plan Transaction',
         manage: 'Manage Transaction'
       }
     },
@@ -317,10 +278,10 @@ export default {
       }
     },
     userManagement: {
-      title: 'Agent Management',
+      title: 'User Management',
       users: {
-        title: 'Agent',
-        manage: 'Manage Agent'
+        title: 'Users',
+        manage: 'Manage User'
       },
       userRoles: {
         title: 'User Roles',

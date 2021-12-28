@@ -7,71 +7,87 @@ export const defaultUserData: IUserData = {
   fullName: '',
   email: '',
   contactNumber: '',
-  occupation:'',
-  address:'',
+  password: '',
+  realMoney:0,
+  fakeMoney:0,
+  numberOfGamesWon:0,
+  numberOfPrizesWon:0,
+  device: '',
+  OSVersion: '',
+  appVersion: '',
+  createdBy: 0,
+  // createdTimestamp: '',
+  deviceId: '',
+  manufacturer: '',
+  model: '',
+  platform: '',
+  pushId: '',
+  // pushUpdatedTimestamp: '',
+  // updatedBy: 0,
+  // updatedTimestamp: '',
+  uuid: '',
 }
 export const getUsers = (params: any) =>
   request({
-    url: '/agent',
+    url: '/users',
+    method: 'get',
+    params
+  })
+  export const getUsersCount = (params: any) =>
+  request({
+    url: '/users/count',
     method: 'get',
     params
   })
 
 export const getUserById = (id: number) =>
   request({
-    url: `/agent/${id}`,
+    url: `/users/${id}`,
     method: 'get'
   })
 
 export const getUserByEmail = (adminemail: string) =>
   request({
-    url: `/agent/${adminemail}`,
+    url: `/users/${adminemail}`,
     method: 'get'
   })
 
 export const updateUser = (id: number, data: any) =>
   request({
-    url: `/agent/${id}`,
+    url: `/users/${id}`,
     method: 'patch',
     data
   })
 
 export const deleteUser = (adminname: string) =>
   request({
-    url: `/agent/${adminname}`,
+    url: `/users/${adminname}`,
     method: 'delete'
   })
 
 export const login = (data: any) =>
   request({
-    url: '/agent/login',
+    url: '/users/login',
     method: 'post',
     data
   })
 
 export const logout = () =>
   request({
-    url: '/agent/logout',
+    url: '/users/logout',
     method: 'post'
   })
 
 export const register = (data: any) =>
   request({
-    url: '/agent/add',
+    url: '/users/add',
     method: 'post',
     data
   })
 
 export const getCompany = (params: any) =>
   request({
-    url: '/agent-roles',
-    method: 'get',
-    params
-  })
-
-  export const getUserCount = (params: any) =>
-  request({
-    url: '/agent/count',
+    url: '/users-roles',
     method: 'get',
     params
   })

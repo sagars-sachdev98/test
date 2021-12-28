@@ -7,18 +7,17 @@ import Layout from '@/layout/index.vue'
 /* Router modules */
 import adminRouter from './modules/admin'
 import usersRouter from './modules/users'
-import fileRouter from './modules/file'
-import recordsRouter from './modules/records'
-import uploadRouter from './modules/upload'
-import companyRouter from './modules/company'
-import blogRouter from './modules/blog'
-import enquiryRouter from './modules/enquiry'
-import fileListRouter from './modules/filelist'
-import LoginLogAccountRouter from './modules/loginlogs'
-import PermanentBlockRouter from './modules/permanent'
-import TemporaryBlockRouter from './modules/temporaryblock'
-import expertadviceRouter from './modules/expertadvice'
-import detailShareRouter from './modules/detailshare'
+import planRouter from './modules/plan'
+import prizeRouter from './modules/prize'
+// import careerRouter from './modules/career'
+//import storeRouter from './modules/store'
+import claimRouter from './modules/claim'
+import bankRouter from './modules/bank'
+import transactionRouter from './modules/plantransaction'
+import gameRouter from './modules/games'
+import GameTransactionRouter from './modules/gametransaction'
+import prizeparticipantRouter from './modules/prizeparticipant'
+import gameparticipantRouter from './modules/gameparticipant'
 
 
 
@@ -129,19 +128,17 @@ export const asyncRoutes: RouteConfig[] = [
   /** when your routing map is too long, you can split it into small modules **/
 
   adminRouter,
+  prizeRouter,
+  planRouter,
   usersRouter,
-  expertadviceRouter,
-  companyRouter,
-  fileRouter,
-  recordsRouter,
-  enquiryRouter,
-  // fileListRouter,
-  LoginLogAccountRouter,
-  PermanentBlockRouter,
-  TemporaryBlockRouter,
-  detailShareRouter,
-  
-  // blogRouter,
+  claimRouter,
+  bankRouter,
+  gameRouter,
+  // GameTransactionRouter,
+  // careerRouter,
+  transactionRouter,
+  prizeparticipantRouter,
+  gameparticipantRouter,
 
   {
     path: '*',

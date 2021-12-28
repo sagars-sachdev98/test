@@ -10,10 +10,10 @@
         class="sidebar-logo-link"
         to="/"
       >
-        <!-- <img
-          src="iepflogo.png"
+        <img
+          src="foxface.png"
           class="sidebar-logo"
-        > -->
+        >
       </router-link>
       <router-link
         v-else
@@ -22,7 +22,7 @@
         to="/"
       >
         <!-- <img
-          src="iepflogo.png"
+          src="foxface.png"
           class="sidebar-logo"
         > -->
         <h1 class="sidebar-title">
@@ -42,7 +42,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class extends Vue {
   @Prop({ required: true }) private collapse!: boolean
 
-  private title = 'IEPF Admin'
+  private title = 'Lucky Fox Admin'
 }
 </script>
 
@@ -62,7 +62,7 @@ export default class extends Vue {
   border-bottom: 1px solid white;
   height: 50px;
   line-height: 50px;
-  background:#388fe0;
+  background:#407B4C;
   text-align: center;
   overflow: hidden;
 
@@ -80,10 +80,10 @@ export default class extends Vue {
     & .sidebar-title {
       display: inline-block;
       margin: 0;
-      color: #fff;
+      color: white;
       font-weight: 600;
       line-height: 50px;
-      font-size: 14px;
+      font-size: 20px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;
     }

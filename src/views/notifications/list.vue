@@ -1,7 +1,10 @@
 <template>
   <div class="app-container">
     <div class="filter-container">
-      <span v-for="filter in filters.filters" :key="filter">
+      <span
+        v-for="filter in filters.filters"
+        :key="filter"
+      >
         <el-select
           v-if="['category','business','company','country','state','city'].includes(filter.name)"
           v-model="listQuery[filter.name + 'Id']"
@@ -53,14 +56,21 @@
         type="primary"
         icon="el-icon-search"
         @click="handleFilter"
-      >{{ $t('table.search') }}</el-button>
-      <router-link :to="'/notifications/add'" class="margin-horizontal">
+      >
+        {{ $t('table.search') }}
+      </el-button>
+      <router-link
+        :to="'/notifications/add'"
+        class="margin-horizontal"
+      >
         <el-button
           v-waves
           class="filter-item"
           type="primary"
           icon="el-icon-plus"
-        >{{ $t('notifications.send') }}</el-button>
+        >
+          {{ $t('notifications.send') }}
+        </el-button>
       </router-link>
       <!-- <el-button
         v-waves
@@ -75,7 +85,9 @@
         class="filter-item"
         style="margin-left:15px;"
         @change="tableKey=tableKey+1"
-      >{{ $t('table.createdDate') }}</el-checkbox>
+      >
+        {{ $t('table.createdDate') }}
+      </el-checkbox>
     </div>
 
     <el-table
@@ -96,16 +108,45 @@
         prop="id"
         :class-name="getSortClass('id')"
       />
-      <el-table-column width="180px" align="center" :label="$t('notifications.title')" prop="title">
+      <el-table-column
+        width="180px"
+        align="center"
+        :label="$t('notifications.title')"
+        prop="title"
+      >
         <template slot-scope="scope">
-          <enabled v-model="scope.row.enabled" :url="'/notifications/' + scope.row.id" />
+          <enabled
+            :key="scope.row.id"
+            v-model="scope.row.enabled"
+            :url="'/notifications/' + scope.row.id"
+          />
           <span>{{ scope.row.title }}</span>
         </template>
       </el-table-column>
-      <el-table-column width="180px" align="center" label="Message" prop="message" />
-      <el-table-column width="180px" align="center" label="Link" prop="link" />
-      <el-table-column width="180px" align="center" label="Page" prop="page" />
-      <el-table-column width="180px" align="center" label="Image" prop="image">
+      <el-table-column
+        width="180px"
+        align="center"
+        label="Message"
+        prop="message"
+      />
+      <el-table-column
+        width="180px"
+        align="center"
+        label="Link"
+        prop="link"
+      />
+      <el-table-column
+        width="180px"
+        align="center"
+        label="Page"
+        prop="page"
+      />
+      <el-table-column
+        width="180px"
+        align="center"
+        label="Image"
+        prop="image"
+      >
         <template slot-scope="scope">
           <pan-thumb
             v-if="scope.row.image"
@@ -147,21 +188,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator'
 import {
   getNotifications,
   getFilters
-} from "@/api/notifications/notifications";
-import { INotificationsData } from "@/api/types";
-import Pagination from "@/components/Pagination/index.vue";
-import { getQuery } from "@/utils/index";
-import { exportJson2Excel } from "@/utils/excel";
-import { formatJson } from "@/utils";
-import Enabled from "@/components/Enabled/index.vue";
-import PanThumb from "@/components/PanThumb/index.vue";
+} from '@/api/notifications/notifications'
+import { INotificationsData } from '@/api/types'
+import Pagination from '@/components/Pagination/index.vue'
+import { getQuery, formatJson } from '@/utils/index'
+import { exportJson2Excel } from '@/utils/excel'
+
+import Enabled from '@/components/Enabled/index.vue'
+import PanThumb from '@/components/PanThumb/index.vue'
 
 @Component({
-  name: "NotificationsList",
+  name: 'NotificationsList',
   components: {
     Pagination,
     Enabled,
@@ -182,105 +223,105 @@ export default class extends Vue {
     countryId: undefined,
     stateId: undefined,
     cityId: undefined,
-    sort: "id,DESC",
+    sort: 'id,DESC',
     filter: {
-      id: "ne",
-      businessId: "eq",
-      companyId: "eq",
-      countryId: "eq",
-      stateId: "eq",
-      cityId: "eq",
-      enabled: "eq"
+      id: 'ne',
+      businessId: 'eq',
+      companyId: 'eq',
+      countryId: 'eq',
+      stateId: 'eq',
+      cityId: 'eq',
+      enabled: 'eq'
     }
   };
 
   private showCreatedDate: boolean = false;
   private sortOptions = [
-    { label: "ID Ascending", key: "id,ASC" },
-    { label: "ID Descending", key: "id,DESC" }
+    { label: 'ID Ascending', key: 'id,ASC' },
+    { label: 'ID Descending', key: 'id,DESC' }
   ];
 
   private enableTypeOptions = [
-    { key: true, value: "Enable" },
-    { key: false, value: "Disabled" }
+    { key: true, value: 'Enable' },
+    { key: false, value: 'Disabled' }
   ];
 
   private filters: any = [];
 
   created() {
-    this.getList();
+    this.getList()
     if (this.listQuery.businessId) {
-      this.getFilters();
+      this.getFilters()
     }
   }
 
   private async getList() {
     try {
-      this.listLoading = true;
-      const data: any = await getNotifications(getQuery(this.listQuery));
-      this.list = data.data;
-      this.total = data.total;
-      this.listLoading = false;
+      this.listLoading = true
+      const data: any = await getNotifications(getQuery(this.listQuery))
+      this.list = data.data
+      this.total = data.total
+      this.listLoading = false
     } catch (error) {
-      this.listLoading = false;
+      this.listLoading = false
     }
   }
 
   private async getFilters() {
     this.filters = await getFilters(
       getQuery({
-        sort: "name,ASC"
+        sort: 'name,ASC'
       })
-    );
+    )
   }
 
   private handleFilter() {
-    this.listQuery.page = 1;
-    this.getList();
+    this.listQuery.page = 1
+    this.getList()
     if (this.listQuery.businessId) {
-      this.getFilters();
+      this.getFilters()
     }
   }
 
   private sortChange(data: any) {
-    const { prop, order } = data;
+    const { prop, order } = data
     if (prop) {
       this.listQuery.sort =
-        `${prop},` + (order === "ascending" ? "ASC" : "DESC");
-      this.handleFilter();
+        `${prop},` + (order === 'ascending' ? 'ASC' : 'DESC')
+      this.handleFilter()
     }
   }
 
   private getSortClass(key: string) {
-    const sort = this.listQuery.sort;
+    const sort = this.listQuery.sort
     return sort === `${key},ASC`
-      ? "ascending"
+      ? 'ascending'
       : sort === `${key},DESC`
-      ? "descending"
-      : "";
+        ? 'descending'
+        : ''
   }
 
   private handleDownload() {
-    this.downloadLoading = true;
+    this.downloadLoading = true
     const tHeader = [
-      "ID",
-      "Full Name",
-      "Email",
-      "Contact Number",
-      "Status",
-      "timestamp"
-    ];
+      'ID',
+      'Full Name',
+      'Email',
+      'Contact Number',
+      'Status',
+      'timestamp'
+    ]
     const filterVal = [
-      "id",
-      "fullName",
-      "email",
-      "contactNumber",
-      "enabled",
-      "createdTimestamp"
-    ];
-    const data = formatJson(filterVal, this.list);
-    exportJson2Excel(tHeader, data, this.$tc("route.notifications.title"));
-    this.downloadLoading = false;
+      'id',
+      'fullName',
+      'email',
+      'contactNumber',
+      'enabled',
+      'createdTimestamp'
+    ]
+    const data = formatJson(filterVal, this.list)
+    exportJson2Excel(tHeader, data, this.$tc('route.notifications.title'))
+    this.downloadLoading = false
   }
 }
 </script>

@@ -147,10 +147,10 @@ import { Form } from 'element-ui'
 import router from './../../../router'
 import { Action } from 'vuex-module-decorators'
 import { getQuery } from '../../../utils'
-// import { getCompanies } from '@/api/master/companies'
-// import { getCountries } from '@/api/locations/countries'
-// import { getStates } from '@/api/locations/states'
-// import { getCities } from '@/api/locations/cities'
+import { getCompanies } from '@/api/master/companies'
+import { getCountries } from '@/api/locations/countries'
+import { getStates } from '@/api/locations/states'
+import { getCities } from '@/api/locations/cities'
 import FileUpload from '@/components/FileUpload/index.vue'
 import { getAppVersions } from '../../../api/common'
 
@@ -216,7 +216,6 @@ export default class extends Vue {
       {
         type: 'email',
         message: 'Please enter correct email address',
-        
         trigger: ['blur', 'change']
       }
     ],

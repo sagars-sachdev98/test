@@ -3,7 +3,7 @@
     :gutter="40"
     class="panel-group"
   >
-    <!--  <el-col
+    <el-col
       :xs="12"
       :sm="12"
       :lg="6"
@@ -38,43 +38,42 @@
           </div>
         </div>
       </router-link>
-    </el-col> -->
+    </el-col>
     <el-col
       :xs="12"
       :sm="12"
       :lg="6"
       class="card-panel-col"
     >
-      <!-- <router-link
-        :to="'/company/list'"
+      <router-link
+        :to="'/prize/list'"
         class="margin-horizontal"
-      > -->
-      <br>
-      <div
-        class="card-panel"
-        @click="handleSetLineChartData('purchases')"
       >
-        <div class="card-panel-icon-wrapper icon-money">
-          <unicon
-            name="sitemap"
-            height="50"
-            width="50"
-            class="card-panel-icon"
-          />
-        </div>
-        <div class="card-panel-description">
-          <div class="card-panel-text">
-            Company
+        <div
+          class="card-panel"
+          @click="handleSetLineChartData('purchases')"
+        >
+          <div class="card-panel-icon-wrapper icon-money">
+            <unicon
+              name="trophy"
+              height="50"
+              width="50"
+              class="card-panel-icon"
+            />
           </div>
-          <count-to
-            :start-val="0"
-            :end-val="companyCount"
-            :duration="3200"
-            class="card-panel-num"
-          />
+          <div class="card-panel-description">
+            <div class="card-panel-text">
+              Prizes
+            </div>
+            <count-to
+              :start-val="0"
+              :end-val="prizesCount"
+              :duration="3200"
+              class="card-panel-num"
+            />
+          </div>
         </div>
-      </div>
-      <!-- </router-link> -->
+      </router-link>
     </el-col>
 
     <el-col
@@ -84,7 +83,7 @@
       class="card-panel-col"
     >
       <router-link
-        :to="'/records/list'"
+        :to="'/claim/list'"
         class="margin-horizontal"
       >
         <div
@@ -101,11 +100,11 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">
-              Records
+              Claims
             </div>
             <count-to
               :start-val="0"
-              :end-val="recordsCount"
+              :end-val="claimsCount"
               :duration="3200"
               class="card-panel-num"
             />
@@ -113,81 +112,6 @@
         </div>
       </router-link>
     </el-col>
-
-    <el-col
-      :xs="12"
-      :sm="12"
-      :lg="6"
-      class="card-panel-col"
-    >
-      <router-link
-        :to="'/files/list'"
-        class="margin-horizontal"
-      >
-        <div
-          class="card-panel"
-          @click="handleSetLineChartData('purchases')"
-        >
-          <div class="card-panel-icon-wrapper icon-money">
-            <unicon
-              name="file-blank"
-              height="50"
-              width="50"
-              class="card-panel-icon"
-            />
-          </div>
-          <div class="card-panel-description">
-            <div class="card-panel-text">
-              Files
-            </div>
-            <count-to
-              :start-val="0"
-              :end-val="filesCount"
-              :duration="3200"
-              class="card-panel-num"
-            />
-          </div>
-        </div>
-      </router-link>
-    </el-col>
-
-    <el-col
-      :xs="12"
-      :sm="12"
-      :lg="6"
-      class="card-panel-col"
-    >
-      <router-link
-        :to="'/enquiry/list'"
-        class="margin-horizontal"
-      >
-        <div
-          class="card-panel"
-          @click="handleSetLineChartData('purchases')"
-        >
-          <div class="card-panel-icon-wrapper icon-money">
-            <unicon
-              name="blogger-alt"
-              height="50"
-              width="50"
-              class="card-panel-icon"
-            />
-          </div>
-          <div class="card-panel-description">
-            <div class="card-panel-text">
-              Enquiry
-            </div>
-            <count-to
-              :start-val="0"
-              :end-val="enquiryCount"
-              :duration="3200"
-              class="card-panel-num"
-            />
-          </div>
-        </div>
-      </router-link>
-    </el-col>
-
     <el-col
       :xs="12"
       :sm="12"
@@ -200,11 +124,11 @@
       >
         <div
           class="card-panel"
-          @click="handleSetLineChartData('purchases')"
+          @click="handleSetLineChartData('users')"
         >
           <div class="card-panel-icon-wrapper icon-money">
             <unicon
-              name="user-square"
+              name="users-alt"
               height="50"
               width="50"
               class="card-panel-icon"
@@ -212,11 +136,11 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">
-              Agent
+              Users
             </div>
             <count-to
               :start-val="0"
-              :end-val="userCount"
+              :end-val="usersCount"
               :duration="3200"
               class="card-panel-num"
             />
@@ -224,18 +148,128 @@
         </div>
       </router-link>
     </el-col>
+    <el-col
+      :xs="12"
+      :sm="12"
+      :lg="6"
+      class="card-panel-col"
+    >
+      <router-link
+        :to="'/bank/list'"
+        class="margin-horizontal"
+      >
+        <div
+          class="card-panel"
+          @click="handleSetLineChartData('users')"
+        >
+          <div class="card-panel-icon-wrapper icon-money">
+            <unicon
+              name="university"
+              height="50"
+              width="50"
+              class="card-panel-icon"
+            />
+          </div>
+          <div class="card-panel-description">
+            <div class="card-panel-text">
+              Banks
+            </div>
+            <count-to
+              :start-val="0"
+              :end-val="banksCount"
+              :duration="3200"
+              class="card-panel-num"
+            />
+          </div>
+        </div>
+      </router-link>
+    </el-col>
+    <el-col
+      :xs="12"
+      :sm="12"
+      :lg="6"
+      class="card-panel-col"
+    >
+      <router-link
+        :to="'/games/list'"
+        class="margin-horizontal"
+      >
+        <div
+          class="card-panel"
+          @click="handleSetLineChartData('users')"
+        >
+          <div class="card-panel-icon-wrapper icon-money">
+            <unicon
+              name="football"
+              height="50"
+              width="50"
+              class="card-panel-icon"
+            />
+          </div>
+          <div class="card-panel-description">
+            <div class="card-panel-text">
+              Games
+            </div>
+            <count-to
+              :start-val="0"
+              :end-val="gamesCount"
+              :duration="3200"
+              class="card-panel-num"
+            />
+          </div>
+        </div>
+      </router-link>
+    </el-col>
+    <!-- <el-col
+      :xs="12"
+      :sm="12"
+      :lg="6"
+      class="card-panel-col"
+    >
+      <router-link
+        :to="'/transaction/list'"
+        class="margin-horizontal"
+      >
+        <div
+          class="card-panel"
+          @click="handleSetLineChartData('users')"
+        >
+          <div class="card-panel-icon-wrapper icon-money">
+            <unicon
+              name="newspaper"
+              height="50"
+              width="50"
+              class="card-panel-icon"
+            />
+          </div>
+          <div class="card-panel-description">
+            <div class="card-panel-text">
+              Transactions
+            </div>
+            <count-to
+              :start-val="0"
+              :end-val="transactionsCount"
+              :duration="3200"
+              class="card-panel-num"
+            />
+          </div>
+        </div>
+      </router-link>
+    </el-col> -->
   </el-row>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import CountTo from 'vue-count-to'
+import { getPrizesCount } from '@/api/prize'
+import { getUsersCount } from '@/api/users'
+import { getPlansCount } from '@/api/plan'
+import { getClaimsCount } from '@/api/claim'
+import { getGameCount } from '@/api/games'
+import { getBanksCount } from '@/api/bank'
+// import { getTransactionsCount } from '@/api/transaction'
 import { getQuery } from '@/utils'
-import { getCompaniesCount } from '@/api/company'
-import { getSharesCount } from '@/api/share'
-import { getEnquiryCount } from '@/api/enquiry'
-import { getFilesCount } from '@/api/file'
-import { getUserCount } from '@/api/users'
 
 @Component({
   name: 'PanelGroup',
@@ -245,28 +279,32 @@ import { getUserCount } from '@/api/users'
 })
 export default class extends Vue {
   private listLoading = true;
-  private companyCount: any = 0;
-  private recordsCount: any = 0;
-  private filesCount: any = 0;
-  private enquiryCount: any = 0;
-  private userCount: any = 0;
+  private prizesCount: any = 0;
+  private plansCount: any = 0;
+  private claimsCount: any = 0;
+  private usersCount: any = 0;
+  private banksCount: any = 0;
+  private gamesCount: any = 0;
+  private transactionsCount: any = 0;
 
   private handleSetLineChartData(type: string) {
     this.$emit('handleSetLineChartData', type)
   }
 
   created() {
-    this.getCompanyCount()
-    this.getRecordsCount()
-    this.getFilesCount()
-    this.getEnquiryCount()
-    this.getUserCount()
+    this.getPrizesCount()
+    this.getPlansCount()
+    this.getClaimsCount()
+    this.getUsersCount()
+    this.getBanksCount()
+    this.getGameCount()
+    // this.getTransactionsCount()
   }
 
-  private async getCompanyCount() {
+  private async getPrizesCount() {
     try {
       this.listLoading = true
-      this.companyCount = await getCompaniesCount(
+      this.prizesCount = await getPrizesCount(
         getQuery({
           enabled: true,
           filter: {
@@ -280,10 +318,10 @@ export default class extends Vue {
     }
   }
 
-  private async getRecordsCount() {
+  private async getGameCount() {
     try {
       this.listLoading = true
-      this.recordsCount = await getSharesCount(
+      this.gamesCount = await getGameCount(
         getQuery({
           enabled: true,
           filter: {
@@ -297,10 +335,44 @@ export default class extends Vue {
     }
   }
 
-  private async getEnquiryCount() {
+  // private async getTransactionsCount() {
+  //   try {
+  //     this.listLoading = true
+  //     this.transactionsCount = await getTransactionsCount(
+  //       getQuery({
+  //         enabled: true,
+  //         filter: {
+  //           enabled: 'eq'
+  //         }
+  //       })
+  //     )
+  //     this.listLoading = false
+  //   } catch (error) {
+  //     this.listLoading = false
+  //   }
+  // }
+
+  private async getBanksCount() {
     try {
       this.listLoading = true
-      this.enquiryCount = await getEnquiryCount(
+      this.banksCount = await getBanksCount(
+        getQuery({
+          enabled: true,
+          filter: {
+
+          }
+        })
+      )
+      this.listLoading = false
+    } catch (error) {
+      this.listLoading = false
+    }
+  }
+
+  private async getPlansCount() {
+    try {
+      this.listLoading = true
+      this.plansCount = await getPlansCount(
         getQuery({
           enabled: true,
           filter: {
@@ -314,10 +386,10 @@ export default class extends Vue {
     }
   }
 
-  private async getUserCount() {
+  private async getUsersCount() {
     try {
       this.listLoading = true
-      this.userCount = await getUserCount(
+      this.usersCount = await getUsersCount(
         getQuery({
           enabled: true,
           filter: {
@@ -331,10 +403,10 @@ export default class extends Vue {
     }
   }
 
-  private async getFilesCount() {
+  private async getClaimsCount() {
     try {
       this.listLoading = true
-      this.filesCount = await getFilesCount(
+      this.claimsCount = await getClaimsCount(
         getQuery({
           enabled: true,
           filter: {
@@ -384,7 +456,7 @@ export default class extends Vue {
       }
 
       .icon-money {
-        background:#388fe0;
+        background:#407B4C;
       }
 
       .icon-money .card-panel-icon{
@@ -410,7 +482,7 @@ export default class extends Vue {
     .card-panel-icon {
       float: left;
       font-size: 48px;
-      fill:#388fe0!important;
+      fill:#407B4C!important;
     }
 
     .card-panel-description {

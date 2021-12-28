@@ -153,7 +153,6 @@ export default class extends Vue {
       if (this.isEdit) {
         await updateAdminsRole(this.postForm.id, this.postForm)
       } else {
-        delete this.postForm.adminsRole
         await createAdminsRole(this.postForm)
       }
 

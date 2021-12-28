@@ -134,6 +134,10 @@ export default class extends Vue {
   color: white !important;
 }
 
+.el-submenu__title i{
+  color: white !important
+}
+
 .full-mode {
   .nest-menu .el-submenu > .el-submenu__title,
   .el-submenu .el-menu-item {
@@ -144,10 +148,6 @@ export default class extends Vue {
       color: white!important;
     }
   }
-}
-
-.el-submenu__title i{
-  color: white !important;
 }
 
 .simple-mode {
@@ -166,7 +166,7 @@ export default class extends Vue {
 
       & > .el-submenu__title {
         padding: 0px !important;
-        background-color: #388fe0;
+        background-color: #ff751a;
 
         .el-submenu__icon-arrow {
           display: none;
@@ -181,7 +181,7 @@ export default class extends Vue {
 }
 .el-menu-item.is-active{
   color:white!important;
-  background-color:#388fe0;
+  background-color:#ff751a;
 }
 
 .el-menu-item.is-active .unicon{
@@ -203,6 +203,6 @@ export default class extends Vue {
   }
 }
 .el-menu-item:hover{
-  background-color:#388fe0;
+  background-color:#ff751a;
 }
 </style>

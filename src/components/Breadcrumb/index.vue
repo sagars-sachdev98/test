@@ -98,6 +98,5 @@ export default class extends Vue {
     color: #97a8be;
     cursor: text;
   }
-
 }
 </style>

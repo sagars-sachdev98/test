@@ -5,31 +5,31 @@
         v-model="listQuery.fullName"
         :placeholder="$t('admin.fullName')"
         style="width: 200px;"
-        filterable="true"
-        clearable="true"
+        class="filter-item"
+        clearable = true
         @input="handleFilter"
       />
       <el-input
         v-model="listQuery.email"
         :placeholder="$t('admin.email')"
         style="width: 200px;"
-        filterable="true"
-        clearable="true"
+        class="filter-item"
+        clearable = true
         @input="handleFilter"
       />
       <el-input
         v-model="listQuery.contactNumber"
         :placeholder="$t('admin.contactNumber')"
         style="width: 200px;"
-        filterable="true"
-        clearable="true"
+        class="filter-item"
+        clearable = true
         @input="handleFilter"
       />
       <el-select
         v-model="listQuery.enabled"
         :placeholder="$t('admin.enabled')"
-        filterable="true"
-        clearable="true"
+        clearable
+        class="filter-item"
         style="width: 130px"
         @change="handleFilter"
       >
@@ -43,8 +43,7 @@
       <el-select
         v-model="listQuery.sort"
         style="width: 140px"
-        filterable="true"
-        clearable="true"
+        class="filter-item"
         @change="handleFilter"
       >
         <el-option
@@ -56,8 +55,7 @@
       </el-select>
       <el-button
         v-waves
-        filterable="true"
-        clearable="true"
+        class="filter-item"
         type="primary"
         icon="el-icon-search"
         @click="handleFilter"
@@ -68,11 +66,9 @@
         :to="'/admins/add'"
         class="margin-horizontal"
       >
-        <br><br>
         <el-button
           v-waves
-          filterable="true"
-          clearable="true"
+          class="filter-item"
           type="primary"
           icon="el-icon-plus"
         >
@@ -89,8 +85,7 @@
       >{{ $t('table.export') }}</el-button> -->
       <el-checkbox
         v-model="showCreatedDate"
-        filterable="true"
-        clearable="true"
+        class="filter-item"
         style="margin-left:15px;"
         @change="tableKey=tableKey+1"
       >
@@ -110,30 +105,31 @@
     >
       <el-table-column
         sortable="custom"
-        width="80"
+        width="180px"
         align="center"
         :label="$t('table.id')"
         prop="id"
         :class-name="getSortClass('id')"
       />
       <el-table-column
-        width="280px"
+        width="250px"
         align="center"
         prop="fullName"
         label="Personal Details"
       >
         <template slot-scope="scope">
           <enabled
+            :key="scope.row.id"
             v-model="scope.row.enabled"
             :url="'/admins/' + scope.row.id"
           />
           <span>{{ scope.row.fullName }}</span><br>
           <div>( {{ scope.row.adminsRole.name }} )</div>
-          <!-- <span>Gender: {{ scope.row.gender }}</span> -->
+          <span>Gender: {{ scope.row.gender }}</span>
         </template>
       </el-table-column>
       <el-table-column
-        width="220px"
+        width="350px"
         align="center"
         label="Contact Details"
         prop="email"
@@ -146,7 +142,7 @@
       <el-table-column
         v-if="showCreatedDate"
         :label="$t('table.createdDate')"
-        width="110px"
+        :min-width="25"
         align="center"
       >
         <template slot-scope="scope">
@@ -157,7 +153,7 @@
         v-if="myRole.indexOf('superadmin') > -1"
         align="center"
         :label="$t('table.actions')"
-        width="180"
+        width="100px"
       >
         <template slot-scope="scope">
           <router-link :to="'/admins/edit/'+scope.row.id">
@@ -214,7 +210,7 @@ export default class extends Vue {
     fullName: undefined,
     email: undefined,
     contactNumber: undefined,
-    sort: 'id,ASC',
+    sort: 'id,DESC',
     filter: {
       id: 'ne',
       fullName: '$contL',
@@ -245,7 +241,6 @@ export default class extends Vue {
       const data: any = await getAdmins(getQuery(this.listQuery))
       this.list = data.data
       this.total = data.total
-
       this.listLoading = false
     } catch (error) {
       this.listLoading = false

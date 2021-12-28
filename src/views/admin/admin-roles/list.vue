@@ -5,15 +5,14 @@
         v-model="listQuery.name"
         :placeholder="$t('admin.role.name')"
         style="width: 200px;"
-        filterable="true"
-        clearable="true"
-        @input="handleFilter"
+        class="filter-item"
+        @keyup.enter.native="handleFilter"
       />
       <el-select
         v-model="listQuery.enabled"
         :placeholder="$t('admin.role.enabled')"
-        filterable="true"
-        clearable="true"
+        clearable = true
+        class="filter-item"
         style="width: 130px"
         @change="handleFilter"
       >
@@ -27,8 +26,7 @@
       <el-select
         v-model="listQuery.sort"
         style="width: 140px"
-        filterable="true"
-        clearable="true"
+        class="filter-item"
         @change="handleFilter"
       >
         <el-option
@@ -40,26 +38,27 @@
       </el-select>
       <el-button
         v-waves
-        filterable="true"
-        clearable="true"
+        class="filter-item"
         type="primary"
         icon="el-icon-search"
         @click="handleFilter"
       >
         {{ $t('table.search') }}
       </el-button>
-      <router-link
+      <!-- <router-link
         :to="'/admin-roles/add'"
         class="margin-horizontal"
       >
         <el-button
           v-waves
+          class="filter-item"
           type="primary"
+          size="small"
           icon="el-icon-plus"
         >
           {{ $t('global.form.add') }}
         </el-button>
-      </router-link>
+      </router-link>-->
       <!-- <el-button
         v-waves
         :loading="downloadLoading"
@@ -70,8 +69,7 @@
       >{{ $t('table.export') }}</el-button> -->
       <el-checkbox
         v-model="showCreatedDate"
-        filterable="true"
-        clearable="true"
+        class="filter-item"
         style="margin-left:15px;"
         @change="tableKey=tableKey+1"
       >
@@ -91,7 +89,7 @@
     >
       <el-table-column
         sortable="custom"
-        width="80"
+        width="150px"
         align="center"
         :label="$t('table.id')"
         prop="id"
@@ -154,7 +152,7 @@ export default class extends Vue {
     page: 1,
     limit: 10,
     name: undefined,
-    sort: 'id,ASC',
+    sort: 'id,DESC',
     filter: {
       name: 'cont',
       enabled: 'eq'

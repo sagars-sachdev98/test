@@ -60,9 +60,6 @@ export default class extends Vue {
   width: 45%;
   margin: 0 auto;
 }
-.el-submenu__title i {
-    color: white !important;
-}
 
 .dashboard-executive-container {
   background-color: #e3e3e3;
