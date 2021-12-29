@@ -1,246 +1,248 @@
-<<<<<<< HEAD
-<p align="center">
-  <img width="120" src="public/img/icons/android-chrome-512x512.png">
-</p>
+# [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]
 
-<p align="center">
-  <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
-  </a>
-  <a href="https://github.com/ElemeFE/element">
-    <img src="https://img.shields.io/badge/element--ui-2.12.0-brightgreen.svg" alt="element-ui">
-  </a>
-  <a href="https://circleci.com/gh/Armour/vue-typescript-admin-template/tree/master">
-    <img src="https://circleci.com/gh/Armour/vue-typescript-admin-template/tree/master.svg?style=shield" alt="CircleCI">
-  </a>
-  <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs Welcome">
-  </a>
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
-  </a>
-  <a href="https://github.com/Armour/Jarvis">
-    <img src="https://img.shields.io/badge/Hi-Jarvis-ff69b4.svg" alt="Template from jarvis">
-  </a>
-</p>
+![Product Gif](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/material-dashboard-angular.gif)
 
-English | [简体中文](./README-zh.md)
+**[Material Dashboard Angular](https://www.creative-tim.com/product/material-dashboard-angular2/)** is a free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard was built over the popular Bootstrap framework and it comes with a couple of third-party plugins redesigned to fit in with the rest of the elements.
 
-## Overview
+Material Dashboard makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
 
-[vue-typescript-admin-template](http://armour.github.io/vue-typescript-admin-template) is a production-ready front-end solution for admin interfaces which based on [vue](https://github.com/vuejs/vue), [typescript](https://www.typescriptlang.org/) and UI Toolkit [element-ui](https://github.com/ElemeFE/element). The original Javascript version code [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin/) was written by [PanJiaChen](https://github.com/PanJiaChen), many thanks to him for the awesome open source project! :)
+This product came as a result of users asking for a material dashboard after we released our successful [Material Kit](http://www.creative-tim.com/product/material-kit). We developed it based on your feedback and it is a powerful bootstrap admin dashboard, which allows you to build products like admin panels, content managements systems and CRMs.
 
-If you want to get start with a minimal template code instead of integration solution, you can take a look at [minimal](https://github.com/Armour/vue-typescript-admin-template/tree/minimal) branch.
+Material Dashboard comes with 5 color filter choices for both the sidebar and the card headers (blue, green, orange, red and purple) and an option to have a background image on the sidebar.
 
-## Documentation
+Material Dashboard uses a framework built by our friend [Federico - Bootstrap Material Design](http://fezvrasta.github.io/bootstrap-material-design/), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
 
-[Docs](https://armour.github.io/vue-typescript-admin-docs)
+Special thanks go to:
+[Robert McIntosh](https://github.com/mouse0270/bootstrap-notify) for the notification system.
+[Chartist](https://gionkunz.github.io/chartist-js/) for the wonderful charts.
+We are very excited to share this dashboard with you and we look forward to hearing your feedback!
 
-## Live demo
+You can find the Github Repo here.
 
-[Demo](https://armour.github.io/vue-typescript-admin-template)
+## Table of Contents
 
-## Screenshots
+* [Versions](#versions)
+* [Demo](#demo)
+* [Quick Start](#quick-start)
+* [Documentation](#documentation)
+* [File Structure](#file-structure)
+* [Browser Support](#browser-support)
+* [Resources](#resources)
+* [Reporting Issues](#reporting-issues)
+* [Technical Support or Questions](#technical-support-or-questions)
+* [Licensing](#licensing)
+* [Useful Links](#useful-links)
 
-![dashboard](./demo/dashboard.png)
 
-## Related Projects
+## Versions
 
-[Armour/vue-typescript-admin-mock-server](https://github.com/armour/vue-typescript-admin-mock-server) (mock server for this project)
+[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard)
+[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/angular-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-angular2)
+[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/vue-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/vue-material-dashboard)
+[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-react)
 
-[Armour/vue-typescript-admin-docs](https://github.com/armour/vue-typescript-admin-docs) (documentation source for this project)
+| HTML | Angular | Vue | React |
+| --- | --- | --- | --- |
+| [![Material Dashboard HTML](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-html/material-dashboard.jpg?raw=true)](https://www.creative-tim.com/product/material-dashboard) | [![Material Dashboard Angular](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-angular/material-dashboard-angular.jpg?raw=true)](https://www.creative-tim.com/product/material-dashboard-angular2) | [![Vue Material Dashboard ](https://github.com/creativetimofficial/public-assets/blob/master/vue-material-dashboard/vue-material-dashboard.jpg?raw=true)](https://www.creative-tim.com/product/vue-material-dashboard) | [![Material Dashboard React](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-react/material-dashboard-react.jpg?raw=true)](https://www.creative-tim.com/product/material-dashboard-react)
 
-Javascript version:
+## Demo
 
-[PanJiaChen/vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) (a vue2.0 minimal admin template) 
+| Dashboard | User Profile | Tables | Icons | Notifications |
+| --- | --- | --- | --- | --- |
+| [![Start page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/dashboard.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard) | [![User profile page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/user-profile.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/user-profile) | [![Tables page ](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/tables.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/table-list) | [![Icons Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/icons.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/maps) | [![Notifications page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/notifications.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/notifications)
 
-[PanJiaChen/vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) (full features supported vue admin) 
+[View More](https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard).
 
-[PanJiaChen/electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin) (a vue electron admin project)
+## Quick start
 
-## Features
+Quick start options:
 
-```txt
-- Login / Logout
+- [Download from Github](https://github.com/tiniestory/material-dashboard-angular2/archive/master.zip).
+- [Download from Creative Tim](http://www.creative-tim.com/product/material-dashboard-angular2).
 
-- Permission Authentication
-  - Page permission
-  - Directive permission
-  - Permission configuration page
-  - Two-step login
+## Terminal Commands
 
-- Multi-environment build
-  - Dev / Stage / Prod
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0 and angular 4.x.
 
-- Global Features
-  - I18n
-  - Dynamic themes
-  - Dynamic sidebar (supports multi-level routing)
-  - Dynamic breadcrumb
-  - Tags-view (supports right-click operation)
-  - Clipboard
-  - Svg icons
-  - Search
-  - Screenfull
-  - Settings
-  - Mock data / Mock server
-  - PWA support
+1. Install NodeJs from [NodeJs Official Page](https://nodejs.org/en).
+2. Open Terminal
+3. Go to your file project
+4. Make sure you have installed [Angular CLI](https://github.com/angular/angular-cli) already. If not, please install.
+5. Run in terminal: ```npm install```
+6. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-- Components
-  - Editors
-    - Rich Text Editor
-    - Markdown Editor
-    - JSON Editor
-  - Avatar Upload
-  - Back To Top
-  - CountTo
-  - Dropzone
-  - Draggable Dialog
-  - Draggable Kanban
-  - Draggable List
-  - Draggable Select
-  - ECharts
-  - Mixin
-  - SplitPane
-  - Sticky
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-- Table
-  - Dynamic Table
-  - Draggable Table
-  - Inline Edit Table
-  - Complex Table
+### What's included
 
-- Excel
-  - Export Excel
-  - Upload Excel
-  - Excel Visualization
+Within the download you'll find the following directories and files:
 
-- Zip
-  - Export zip
+```
+material-dashboard-angular
+├── CHANGELOG.md
+├── LICENSE.md
+├── README.md
+├── angular-cli.json
+├── documentation
+├── e2e
+├── karma.conf.js
+├── package-lock.json
+├── package.json
+├── protractor.conf.js
+├── src
+│   ├── app
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── app.routing.ts
+│   │   ├── components
+│   │   │   ├── components.module.ts
+│   │   │   ├── footer
+│   │   │   │   ├── footer.component.css
+│   │   │   │   ├── footer.component.html
+│   │   │   │   ├── footer.component.spec.ts
+│   │   │   │   └── footer.component.ts
+│   │   │   ├── navbar
+│   │   │   │   ├── navbar.component.css
+│   │   │   │   ├── navbar.component.html
+│   │   │   │   ├── navbar.component.spec.ts
+│   │   │   │   └── navbar.component.ts
+│   │   │   └── sidebar
+│   │   │       ├── sidebar.component.css
+│   │   │       ├── sidebar.component.html
+│   │   │       ├── sidebar.component.spec.ts
+│   │   │       └── sidebar.component.ts
+│   │   ├── dashboard
+│   │   │   ├── dashboard.component.css
+│   │   │   ├── dashboard.component.html
+│   │   │   ├── dashboard.component.spec.ts
+│   │   │   └── dashboard.component.ts
+│   │   ├── icons
+│   │   │   ├── icons.component.css
+│   │   │   ├── icons.component.html
+│   │   │   ├── icons.component.spec.ts
+│   │   │   └── icons.component.ts
+│   │   ├── layouts
+│   │   │   └── admin-layout
+│   │   │       ├── admin-layout.component.html
+│   │   │       ├── admin-layout.component.scss
+│   │   │       ├── admin-layout.component.spec.ts
+│   │   │       ├── admin-layout.component.ts
+│   │   │       ├── admin-layout.module.ts
+│   │   │       └── admin-layout.routing.ts
+│   │   ├── maps
+│   │   │   ├── maps.component.css
+│   │   │   ├── maps.component.html
+│   │   │   ├── maps.component.spec.ts
+│   │   │   └── maps.component.ts
+│   │   ├── notifications
+│   │   │   ├── notifications.component.css
+│   │   │   ├── notifications.component.html
+│   │   │   ├── notifications.component.spec.ts
+│   │   │   └── notifications.component.ts
+│   │   ├── table-list
+│   │   │   ├── table-list.component.css
+│   │   │   ├── table-list.component.html
+│   │   │   ├── table-list.component.spec.ts
+│   │   │   └── table-list.component.ts
+│   │   ├── typography
+│   │   │   ├── typography.component.css
+│   │   │   ├── typography.component.html
+│   │   │   ├── typography.component.spec.ts
+│   │   │   └── typography.component.ts
+│   │   ├── upgrade
+│   │   │   ├── upgrade.component.css
+│   │   │   ├── upgrade.component.html
+│   │   │   ├── upgrade.component.spec.ts
+│   │   │   └── upgrade.component.ts
+│   │   └── user-profile
+│   │       ├── user-profile.component.css
+│   │       ├── user-profile.component.html
+│   │       ├── user-profile.component.spec.ts
+│   │       └── user-profile.component.ts
+│   ├── assets
+│   │   ├── css
+│   │   │   └── demo.css
+│   │   ├── img
+│   │   └── scss
+│   │       ├── core
+│   │       └── material-dashboard.scss
+│   ├── environments
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.css
+│   ├── test.ts
+│   ├── tsconfig.app.json
+│   ├── tsconfig.spec.json
+│   └── typings.d.ts
+├── tsconfig.json
+├── tslint.json
+└── typings
 
-- PDF
-  - Download pdf
-
-- Dashboard
-- Guide Page
-- Advanced Example Page
-- Error Log
-- Error Page
-  - 401
-  - 404
 ```
 
-## Preparation
+## Browser Support
 
-You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [typescript](https://www.typescriptlang.org/), [vue](https://vuejs.org/index.html), [vuex](https://vuex.vuejs.org/), [vue-router](https://router.vuejs.org/), [vue-cli](https://github.com/vuejs/vue-cli) , [axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element), all request data is simulated using [faker.js](https://github.com/Marak/Faker.js).
-Understanding and learning these knowledge in advance will greatly help you on using this project.
+At present, we officially aim to support the last two versions of the following browsers:
 
-## Project Structure
+<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
 
-```bash
-├── mock/                      # mock server & mock data
-├── public                     # public static assets (directly copied)
-│   │── favicon.ico            # favicon
-│   │── manifest.json          # PWA config file
-│   └── index.html             # index.html template
-├── src                        # main source code
-│   ├── api                    # api service
-│   ├── assets                 # module assets like fonts, images (processed by webpack)
-│   ├── components             # global components
-│   ├── directives             # global directives
-│   ├── filters                # global filter
-│   ├── icons                  # svg icons
-│   ├── lang                   # i18n language
-│   ├── layout                 # global layout
-│   ├── pwa                    # PWA service worker related files
-│   ├── router                 # router
-│   ├── store                  # store
-│   ├── styles                 # global css
-│   ├── utils                  # global utils
-│   ├── views                  # views
-│   ├── App.vue                # main app component
-│   ├── main.ts                # app entry file
-│   ├── permission.ts          # permission authentication
-│   ├── settings.ts            # setting file
-│   └── shims.d.ts             # type definition shims
-├── tests/                     # tests
-├── .circleci/                 # automated CI configuration
-├── .browserslistrc            # browserslist config file (to support Autoprefixer)
-├── .editorconfig              # editor code format consistency config
-├── .env.xxx                   # env variable configuration
-├── .eslintrc.js               # eslint config
-├── babel.config.js            # babel config
-├── cypress.json               # e2e test config
-├── jest.config.js             # jest unit test config
-├── package.json               # package.json
-├── postcss.config.js          # postcss config
-├── tsconfig.json              # typescript config
-└── vue.config.js              # vue-cli config
-```
 
-## Project setup
 
-### Install dependencies
+## Resources
+- Demo: <https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard>
+- Download Page: <https://www.creative-tim.com/product/material-dashboard-angular2>
+- Documentation: <https://demos.creative-tim.com/material-dashboard-angular2/#/documentation/tutorial>
+- License Agreement: <https://www.creative-tim.com/license>
+- Support: <https://www.creative-tim.com/contact-us>
+- Issues: [Github Issues Page](https://github.com/creativetimofficial/material-dashboard-angular2/issues)
+- [Material Kit](https://www.creative-tim.com/product/material-kit?ref=github-mda-free) - For Front End Development
 
-```bash
-yarn install
-```
+## Reporting Issues
 
-### Compiles and hot-reloads for development
+We use GitHub Issues as the official bug tracker for the Material Dashboard. Here are some advices for our users that want to report an issue:
 
-```bash
-yarn run serve
-```
+1. Make sure that you are using the latest version of the Material Dashboard. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/).
+2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
+3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
-### Compiles and minifies for production
 
-```bash
-yarn run build:prod
-```
+## Technical Support or Questions
 
-### Lints and fixes files
+If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
 
-```bash
-yarn run lint
-```
 
-### Run your unit tests
 
-```bash
-yarn run test:unit
-```
+## Licensing
 
-### Run your end-to-end tests
+- Copyright 2018 Creative Tim (https://www.creative-tim.com/)
 
-```bash
-yarn run test:e2e
-```
+- Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-angular2/blob/master/LICENSE.md)
 
-### Generate all svg components
 
-```bash
-yarn run svg
-```
+## Useful Links
 
-### Customize Vue configuration
+- [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
+- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
+- [Freebies](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
+- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+##### Social Media
 
-## Browsers support
+Twitter: <https://twitter.com/CreativeTim>
 
-Modern browsers and Internet Explorer 10+.
+Facebook: <https://www.facebook.com/CreativeTim>
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
+Dribbble: <https://dribbble.com/creativetim>
 
-## Contributing
+Google+: <https://plus.google.com/+CreativetimPage>
 
-See [CONTRIBUTING.md](https://github.com/Armour/vue-typescript-admin-template/blob/master/.github/CONTRIBUTING.md)
+Instagram: <https://www.instagram.com/CreativeTimOfficial>
 
-## License
+[CHANGELOG]: ./CHANGELOG.md
 
-[MIT License](https://github.com/Armour/vue-typescript-admin-template/blob/master/LICENSE)
-=======
-Admin Panel
->>>>>>> 23f129423b64b51e00d3ff0d453681126d996104
+[version-badge]: https://img.shields.io/badge/version-2.6.0-blue.svg
